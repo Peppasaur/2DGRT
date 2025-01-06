@@ -1,11 +1,6 @@
 # 2D Gaussian Ray Tracing
 
 ### How to use
-Firstly open the viewer, 
-```shell
-<path to downloaded/compiled viewer>/bin/SIBR_remoteGaussian_app_rwdi
-```
-and then
 ```shell
 # Monitor the training process
 python train.py -s <path to COLMAP or NeRF Synthetic dataset> 
