@@ -1,0 +1,16 @@
+LICENSE.md
+LICENSE_KIUI
+LICENSE_NVIDIA
+README.md
+setup.py
+/home/qinhaoran/gtracer/2d-gaussian-splatting/src/bindings.cu
+/home/qinhaoran/gtracer/2d-gaussian-splatting/src/bvh.cu
+/home/qinhaoran/gtracer/src/bindings.cu
+/home/qinhaoran/gtracer/src/bvh.cu
+gtracer/__init__.py
+gtracer/raytracer.py
+gtracer.egg-info/PKG-INFO
+gtracer.egg-info/SOURCES.txt
+gtracer.egg-info/dependency_links.txt
+gtracer.egg-info/requires.txt
+gtracer.egg-info/top_level.txt

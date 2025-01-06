@@ -18,6 +18,8 @@ from utils.render_utils import save_img_f32, save_img_u8
 from functools import partial
 import open3d as o3d
 import trimesh
+import gc
+
 
 def post_process_mesh(mesh, cluster_to_keep=1000):
     """
@@ -103,7 +105,11 @@ class GaussianExtractor(object):
         """
         self.clean()
         self.viewpoint_stack = viewpoint_stack
+        render_pkg={}
         for i, viewpoint_cam in tqdm(enumerate(self.viewpoint_stack), desc="reconstruct radiance fields"):
+            #print("view_mat")
+            #print(viewpoint_cam.world_view_transform)
+            #if i==0:
             render_pkg = self.render(viewpoint_cam, self.gaussians)
             rgb = render_pkg['render']
             alpha = render_pkg['rend_alpha']
@@ -115,6 +121,19 @@ class GaussianExtractor(object):
             # self.alphamaps.append(alpha.cpu())
             # self.normals.append(normal.cpu())
             # self.depth_normals.append(depth_normal.cpu())
+            '''
+            del render_pkg
+            del rgb
+            del alpha
+            del normal
+            del depth
+            del depth_normal
+            gc.collect()
+            '''
+            torch.cuda.empty_cache()
+            #print(torch.cuda.memory_summary(device='cuda:0'))
+            
+            
         
         # self.rgbmaps = torch.stack(self.rgbmaps, dim=0)
         # self.depthmaps = torch.stack(self.depthmaps, dim=0)

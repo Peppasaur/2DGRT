@@ -18,11 +18,12 @@ from scene.gaussian_model import GaussianModel
 from arguments import ModelParams
 from utils.camera_utils import cameraList_from_camInfos, camera_to_JSON
 
+
 class Scene:
 
     gaussians : GaussianModel
 
-    def __init__(self, args : ModelParams, gaussians : GaussianModel, load_iteration=None, shuffle=True, resolution_scales=[1.0]):
+    def __init__(self, args : ModelParams, gaussians : GaussianModel, load_iteration=None, shuffle=True, resolution_scales=[1.0],test_pcd=0):
         """b
         :param path: Path to colmap scene main folder.
         """
@@ -75,10 +76,14 @@ class Scene:
             self.test_cameras[resolution_scale] = cameraList_from_camInfos(scene_info.test_cameras, resolution_scale, args)
         
         if self.loaded_iter:
-            self.gaussians.load_ply(os.path.join(self.model_path,
+            if test_pcd:
+                self.gaussians.load_gs("/data/qinhaoran/processed/gs_new_bunny.npz")
+            else:
+                self.gaussians.load_ply(os.path.join(self.model_path,
                                                            "point_cloud",
                                                            "iteration_" + str(self.loaded_iter),
                                                            "point_cloud.ply"))
+            self.gaussians.build_bvh()
         else:
             self.gaussians.create_from_pcd(scene_info.point_cloud, self.cameras_extent)
 

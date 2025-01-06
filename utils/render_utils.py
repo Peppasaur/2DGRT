@@ -19,7 +19,6 @@ import types
 from typing import List, Mapping, Optional, Text, Tuple, Union
 import copy
 from PIL import Image
-import mediapy as media
 from matplotlib import cm
 from tqdm import tqdm
 
@@ -202,6 +201,8 @@ def load_img(pth: str) -> np.ndarray:
 
 def create_videos(base_dir, input_dir, out_name, num_frames=480):
   """Creates videos out of the images saved to disk."""
+  return
+  '''
   # Last two parts of checkpoint path are experiment name and scene name.
   video_prefix = f'{out_name}'
 
@@ -266,6 +267,7 @@ def create_videos(base_dir, input_dir, out_name, num_frames=480):
         frame = (np.clip(np.nan_to_num(img), 0., 1.) * 255.).astype(np.uint8)
         writer.add_image(frame)
         idx += 1
+  '''
 
 def save_img_u8(img, pth):
   """Save an image (probably RGB) in [0, 1] to disk as a uint8 PNG."""

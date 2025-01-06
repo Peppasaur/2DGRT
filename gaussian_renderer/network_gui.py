@@ -25,12 +25,14 @@ addr = None
 listener = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 def init(wish_host, wish_port):
+    '''
     global host, port, listener
     host = wish_host
     port = wish_port
     listener.bind((host, port))
     listener.listen()
     listener.settimeout(0)
+    '''
 
 def send_json_data(conn, data):
     # Serialize the list of strings to JSON

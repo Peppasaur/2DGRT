@@ -1,0 +1,7 @@
+ninja
+trimesh
+opencv-python
+torch
+numpy
+tqdm
+dearpygui
