@@ -1,4 +1,14 @@
-# 2D Gaussian Ray Tracing
+2D Gaussian Ray Tracing
+~A gaussian renderer based on ray matching
+~Using Optix for acceleration 
+~supports both gaussian and linear primitives
+The training result after 5000 iter:
+![image](https://github.com/user-attachments/assets/2e91f51f-8313-4878-b357-afbfa3913e7e)
+![image](https://github.com/user-attachments/assets/c1061190-6348-4863-a92a-64e9a4faf902)
+
+Normal visualization before and after adding normal-depth consistency loss.
+![image](https://github.com/user-attachments/assets/75f1fb28-90c8-4d1a-b02c-42df05994ce2)
+![image](https://github.com/user-attachments/assets/f7d236b8-dc98-4886-800e-25636c8264d8)
 
 ### How to use
 ```shell
