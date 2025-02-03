@@ -7,6 +7,7 @@
 ~supports both gaussian and linear primitives
 
 The training result after 5000 iter:
+
 ![image](https://github.com/user-attachments/assets/2e91f51f-8313-4878-b357-afbfa3913e7e)
 ![image](https://github.com/user-attachments/assets/c1061190-6348-4863-a92a-64e9a4faf902)
 
