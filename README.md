@@ -8,8 +8,9 @@ The training result after 5000 iter:
 
 Normal visualization before and after adding normal-depth consistency loss.
 
-![image](https://github.com/user-attachments/assets/75f1fb28-90c8-4d1a-b02c-42df05994ce2)
 ![image](https://github.com/user-attachments/assets/f7d236b8-dc98-4886-800e-25636c8264d8)
+![image](https://github.com/user-attachments/assets/75f1fb28-90c8-4d1a-b02c-42df05994ce2)
+
 
 ### How to use
 ```shell
